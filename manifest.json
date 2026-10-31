@@ -1,0 +1,19 @@
+{
+  "id": "66e42307-c6a5-4984-9fde-2af9235cd768",
+  "version": "1.0.0",
+  "platform": "win",
+  "arch": "all",
+  "name": "Eagle to ComfyUI",
+  "logo": "/logo.png",
+  "keywords": ["ComfyUI", "provenance", "workflow"],
+  "devTools": false,
+  "preview": {
+    "png": {
+      "inspector": {
+        "path": "index.html",
+        "height": 520,
+        "multiSelect": false
+      }
+    }
+  }
+}

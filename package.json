@@ -1,0 +1,11 @@
+{
+  "name": "eagle-to-comfy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eagle inspector for ComfyUI PNG provenance",
+  "engines": { "node": ">=16" },
+  "scripts": {
+    "test": "node tests\\run.js",
+    "check": "node --check js\\png-metadata.js && node --check js\\settings.js && node --check js\\comfy-client.js && node --check js\\inspector.js && node --check tests\\run.js && node --check tests\\fixtures.js"
+  }
+}

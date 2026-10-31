@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eagle to ComfyUI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="panel" hidden>
+        <h1>Eagle to ComfyUI</h1>
+        <p id="error" role="alert" hidden></p>
+        <section id="workflow" hidden>
+            <h2>Description</h2>
+            <pre id="description"></pre>
+            <label for="override">この画像の接続先（一時上書き）</label>
+            <input id="override" type="url" placeholder="空欄なら基本設定を使用" autocomplete="off">
+            <button id="reset-url" type="button">基本設定を使用</button>
+            <p id="effective-url" class="wrap"></p>
+            <label for="clients">反映先 ComfyUI ブラウザー</label>
+            <select id="clients" disabled><option value="">接続一覧未取得</option></select>
+            <button id="refresh" type="button">接続一覧を更新</button>
+            <p id="clients-status" role="status"></p>
+            <p class="notice">元 PNG と埋め込み入力画像を指定先へ送信します。キャンバスの既存グラフは事前に保存してください。</p>
+            <button id="build" type="button" disabled>Build ComfyUI Workflow</button>
+            <p id="restore-status" role="status">復元 API: 未呼び出し</p>
+            <p class="notice">HTTP 成功でも画面上の構築完了は未確認です。生成は自動実行しません。</p>
+        </section>
+        <details id="settings">
+            <summary>プラグイン設定</summary>
+            <form id="settings-form">
+                <label for="base-url">基本接続先 URL</label>
+                <input id="base-url" type="url" required autocomplete="off">
+                <label for="timeout">タイムアウト（秒）</label>
+                <input id="timeout" type="number" step="any" min="0.001" max="2147483" required>
+                <button id="save-settings" type="submit">設定を保存</button>
+                <p id="settings-status" role="status"></p>
+            </form>
+        </details>
+    </main>
+    <script src="js/inspector.js"></script>
+</body>
+</html>
