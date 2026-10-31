@@ -1,0 +1,55 @@
+:root {
+    color-scheme: light dark;
+    --background: #f4f4f4;
+    --foreground: #202124;
+    --field: #fff;
+    --border: #c6c8cb;
+    --accent: #236dc2;
+    --error: #a92323;
+}
+body[data-theme="GRAY"], body[data-theme="DARK"], body[data-theme="BLUE"],
+body[data-theme="PURPLE"] {
+    --background: #242529;
+    --foreground: #efefef;
+    --field: #303136;
+    --border: #575960;
+    --accent: #8cc2ff;
+    --error: #ffaaaa;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { font: 12px sans-serif; height: 100%; }
+body { margin: 0; padding: 10px; color: var(--foreground); background: var(--background); }
+h1 { margin: 0 0 10px; font-size: 14px; }
+h2 { font-size: 12px; }
+pre {
+    max-height: 180px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+label { display: block; margin: 10px 0 4px; }
+input, select, button {
+    font: inherit;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px;
+    color: var(--foreground);
+    background: var(--field);
+}
+input, select { width: 100%; }
+button { cursor: pointer; margin-top: 6px; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+}
+#build { width: 100%; color: var(--accent); font-weight: bold; }
+#error { color: var(--error); white-space: pre-wrap; overflow-wrap: anywhere; }
+.notice { font-size: 11px; line-height: 1.5; opacity: 0.85; }
+.wrap, [role="status"] { overflow-wrap: anywhere; }
+details { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+summary { cursor: pointer; }
